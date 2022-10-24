@@ -4,6 +4,9 @@
  */
 package gestionclientes.gui;
 
+import gestionclientes.dto.Cliente;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author Manu
@@ -15,8 +18,21 @@ public class PantallaPrincipal extends javax.swing.JFrame {
      */
     public PantallaPrincipal() {
         initComponents();
+        inicializarTabla();
     }
-
+    
+    private void inicializarTabla()
+    {
+        DefaultTableModel dtm = new DefaulTableModel();
+        dtm.setColumnIdentifiers(new String[]{"Nombre","Apellidos","Fecha Alta","Provincia"});
+        jTableClientes.setModel(dtm);
+    }
+    
+    public void aniadirCliente(Cliente cliente)
+    {
+        DefaultTableModel dtm = (DefaultTableModel)jTableClientes.getModel();
+        dtm.addRow(cliente.toArrayString());
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -129,4 +145,10 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTableClientes;
     // End of variables declaration//GEN-END:variables
+
+    private static class DefaulTableModel extends DefaultTableModel {
+
+        public DefaulTableModel() {
+        }
+    }
 }
