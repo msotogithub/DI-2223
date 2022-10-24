@@ -2,30 +2,20 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JDialog.java to edit this template
  */
+package gui;
 
 /**
  *
- * @author ManuelSotoBaquero
+ * @author Manu
  */
 public class PantallaSecundaria extends javax.swing.JDialog {
 
     /**
      * Creates new form PantallaSecundaria
      */
-    
-    /*
-    Para poder referenciar a la pantalla principal declaramos un objeto
-    de esa clase (PantallaPrincipal) en nuestra pantalla secundaria
-    */
     private PantallaPrincipal pantallaPrincipal;
-    
-    public PantallaSecundaria(java.awt.Frame parent, boolean modal)
-    {
+    public PantallaSecundaria(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
-        /*
-        Dentro del constructor de la secundaria inicializamos el objeto 
-        de la principal con un casting del parámetro "parent" que se le pasa al constructor
-        */
         pantallaPrincipal = (PantallaPrincipal)parent;
         initComponents();
     }
@@ -39,12 +29,11 @@ public class PantallaSecundaria extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jTextFieldNombre = new javax.swing.JTextField();
         jButtonVolver = new javax.swing.JButton();
+        jTextFieldNombre = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-
-        jTextFieldNombre.setText("jTextField1");
 
         jButtonVolver.setText("Volver");
         jButtonVolver.addActionListener(new java.awt.event.ActionListener() {
@@ -53,45 +42,48 @@ public class PantallaSecundaria extends javax.swing.JDialog {
             }
         });
 
+        jLabel1.setText("Introduce tu nombre");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(158, 158, 158)
+                .addGap(32, 32, 32)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jButtonVolver)
-                    .addComponent(jTextFieldNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(171, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTextFieldNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(156, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(100, 100, 100)
-                .addComponent(jTextFieldNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(73, 73, 73)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextFieldNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1))
+                .addGap(28, 28, 28)
                 .addComponent(jButtonVolver)
-                .addContainerGap(138, Short.MAX_VALUE))
+                .addContainerGap(155, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVolverActionPerformed
-    //declaramos una variable de texto para recuperar el nombre informado por el usuario
-    String nombre = jTextFieldNombre.getText();
-    //llamamos al método "establecerNombre" del objeto pantallaPrincipal
-    pantallaPrincipal.establecerNombre(nombre);
-        
-    //hacemos invisible la ventana con el método setVisible:
-            setVisible(false);
+        // TODO add your handling code here:
+        String nombre = jTextFieldNombre.getText();
+        pantallaPrincipal.establecerNombre(nombre);
+        setVisible(false);
     }//GEN-LAST:event_jButtonVolverActionPerformed
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[])
-    {
+    public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -117,13 +109,11 @@ public class PantallaSecundaria extends javax.swing.JDialog {
 
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run()
-            {
+            public void run() {
                 PantallaSecundaria dialog = new PantallaSecundaria(new javax.swing.JFrame(), true);
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override
-                    public void windowClosing(java.awt.event.WindowEvent e)
-                    {
+                    public void windowClosing(java.awt.event.WindowEvent e) {
                         System.exit(0);
                     }
                 });
@@ -134,6 +124,7 @@ public class PantallaSecundaria extends javax.swing.JDialog {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonVolver;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JTextField jTextFieldNombre;
     // End of variables declaration//GEN-END:variables
 }

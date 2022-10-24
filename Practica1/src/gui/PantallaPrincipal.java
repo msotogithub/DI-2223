@@ -2,18 +2,18 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
+package gui;
 
 /**
  *
- * @author ManuelSotoBaquero
+ * @author Manu
  */
 public class PantallaPrincipal extends javax.swing.JFrame {
 
     /**
      * Creates new form PantallaPrincipal
      */
-    public PantallaPrincipal()
-    {
+    public PantallaPrincipal() {
         initComponents();
     }
 
@@ -24,19 +24,16 @@ public class PantallaPrincipal extends javax.swing.JFrame {
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents()
-    {
+    private void initComponents() {
 
         jButtonDialogo = new javax.swing.JButton();
         jLabelSaludo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jButtonDialogo.setText("Abrir diálogo");
-        jButtonDialogo.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        jButtonDialogo.setText("Ir a diálogo");
+        jButtonDialogo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonDialogoActionPerformed(evt);
             }
         });
@@ -45,38 +42,35 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(144, Short.MAX_VALUE)
-                .addComponent(jButtonDialogo)
-                .addGap(157, 157, 157))
             .addGroup(layout.createSequentialGroup()
-                .addGap(136, 136, 136)
-                .addComponent(jLabelSaludo, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(158, 158, 158)
+                        .addComponent(jButtonDialogo))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(66, 66, 66)
+                        .addComponent(jLabelSaludo, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(72, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(46, 46, 46)
-                .addComponent(jLabelSaludo, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(37, 37, 37)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(75, Short.MAX_VALUE)
+                .addComponent(jLabelSaludo, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(49, 49, 49)
                 .addComponent(jButtonDialogo)
-                .addContainerGap(167, Short.MAX_VALUE))
+                .addGap(131, 131, 131))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButtonDialogoActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jButtonDialogoActionPerformed
-    {//GEN-HEADEREND:event_jButtonDialogoActionPerformed
-    
-    //Declaramos e inicializamos un objeto de tipo "PantallaSecundaria", o sea, de tipo JDialog 
+    private void jButtonDialogoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDialogoActionPerformed
+        // TODO add your handling code here:
         PantallaSecundaria pantallaSecundaria = new PantallaSecundaria(this,true);
-    
-    //Hacemos visible el objeto creado con el método "setVisible" que tiene la clase JDialog
         pantallaSecundaria.setVisible(true);
     }//GEN-LAST:event_jButtonDialogoActionPerformed
-    //Para acceder al texto de la etiqueta (que es privado en la principal) definimos el siguiente método:
+
     public void establecerNombre(String nombre)
     {
         jLabelSaludo.setText("Bienvenido a la aplicación " + nombre);
@@ -84,8 +78,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[])
-    {
+    public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -111,8 +104,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run()
-            {
+            public void run() {
                 new PantallaPrincipal().setVisible(true);
             }
         });
