@@ -69,13 +69,17 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
     private void jButtonDialogoActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jButtonDialogoActionPerformed
     {//GEN-HEADEREND:event_jButtonDialogoActionPerformed
-    PantallaSecundaria pantallaSecundaria = new PantallaSecundaria(this,true);
-    pantallaSecundaria.setVisible(true);
+    
+    //Declaramos e inicializamos un objeto de tipo "PantallaSecundaria", o sea, de tipo JDialog 
+        PantallaSecundaria pantallaSecundaria = new PantallaSecundaria(this,true);
+    
+    //Hacemos visible el objeto creado con el método "setVisible" que tiene la clase JDialog
+        pantallaSecundaria.setVisible(true);
     }//GEN-LAST:event_jButtonDialogoActionPerformed
-
+    //Para acceder al texto de la etiqueta (que es privado en la principal) definimos el siguiente método:
     public void establecerNombre(String nombre)
     {
-        
+        jLabelSaludo.setText("Bienvenido a la aplicación " + nombre);
     }
     /**
      * @param args the command line arguments
