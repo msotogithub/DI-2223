@@ -5,6 +5,7 @@
 package gestionclientes.gui;
 
 import gestionclientes.dto.Cliente;
+import gestionclientes.file.Ficheros;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -12,7 +13,7 @@ import javax.swing.table.DefaultTableModel;
  * @author Manu
  */
 public class PantallaPrincipal extends javax.swing.JFrame {
-
+    private Ficheros fich = new Ficheros();
     /**
      * Creates new form PantallaPrincipal
      */
@@ -40,24 +41,30 @@ public class PantallaPrincipal extends javax.swing.JFrame {
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
+    private void initComponents()
+    {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         jTableClientes = new javax.swing.JTable();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItemAlta = new javax.swing.JMenuItem();
+        jMenuFichero = new javax.swing.JMenu();
+        jMenuItemCargar = new javax.swing.JMenuItem();
+        jMenuItemGuardar = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jTableClientes.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
+            new Object [][]
+            {
                 {null, null, null, null},
                 {null, null, null, null},
                 {null, null, null, null},
                 {null, null, null, null}
             },
-            new String [] {
+            new String []
+            {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
@@ -66,14 +73,40 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         jMenu1.setText("Clientes");
 
         jMenuItemAlta.setText("Alta...");
-        jMenuItemAlta.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        jMenuItemAlta.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 jMenuItemAltaActionPerformed(evt);
             }
         });
         jMenu1.add(jMenuItemAlta);
 
         jMenuBar1.add(jMenu1);
+
+        jMenuFichero.setText("Fichero");
+
+        jMenuItemCargar.setText("Cargar");
+        jMenuItemCargar.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                jMenuItemCargarActionPerformed(evt);
+            }
+        });
+        jMenuFichero.add(jMenuItemCargar);
+
+        jMenuItemGuardar.setText("Guardar");
+        jMenuItemGuardar.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                jMenuItemGuardarActionPerformed(evt);
+            }
+        });
+        jMenuFichero.add(jMenuItemGuardar);
+
+        jMenuBar1.add(jMenuFichero);
 
         setJMenuBar(jMenuBar1);
 
@@ -102,6 +135,20 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         DialogoAlta dialogoAlta = new DialogoAlta(this,true);
         dialogoAlta.setVisible(true);
     }//GEN-LAST:event_jMenuItemAltaActionPerformed
+
+    private void jMenuItemCargarActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jMenuItemCargarActionPerformed
+    {//GEN-HEADEREND:event_jMenuItemCargarActionPerformed
+        System.out.println("Has seleccionado el menú Cargar");
+        //llamada al método de Cargar de la clase Ficheros
+        fich.Cargar();
+    }//GEN-LAST:event_jMenuItemCargarActionPerformed
+
+    private void jMenuItemGuardarActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jMenuItemGuardarActionPerformed
+    {//GEN-HEADEREND:event_jMenuItemGuardarActionPerformed
+        System.out.println("Has seleccionado el menú Guardar");
+        //llamada al método de Guardar de la calse Ficheros
+        fich.Guardar();
+    }//GEN-LAST:event_jMenuItemGuardarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -141,7 +188,10 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenu jMenuFichero;
     private javax.swing.JMenuItem jMenuItemAlta;
+    private javax.swing.JMenuItem jMenuItemCargar;
+    private javax.swing.JMenuItem jMenuItemGuardar;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTableClientes;
     // End of variables declaration//GEN-END:variables
